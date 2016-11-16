@@ -185,6 +185,11 @@ public class BangunRuang extends javax.swing.JFrame {
 
         vol.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         vol.setText("Volume");
+        vol.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -267,8 +272,24 @@ public class BangunRuang extends javax.swing.JFrame {
                     JOptionPane.INFORMATION_MESSAGE);
         }
         catch (Exception e){
-        JOptionPane.showMessageDialog();}
+        JOptionPane.showMessageDialog(null,"Error:"+e,"gagal",
+                JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_hitungActionPerformed
+
+    private void volActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volActionPerformed
+        // TODO add your handling code here:
+        float jari;
+        jari = Integer.parseInt(pj.getText());
+        float hasil = (float) (4/3*3.14*jari*jari*jari);
+        try{
+            JOptionPane.showMessageDialog(null,"Luas Permukaan Bola Adalah :"+hasil,"Volume",JOptionPane.INFORMATION_MESSAGE);
+        }
+        catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Error:"+e,"Gagal",
+                    JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_volActionPerformed
 
     /**
      * @param args the command line arguments
